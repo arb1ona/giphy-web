@@ -70,6 +70,17 @@
   color: #666;
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pageInfo {
+  padding: 0 10px;
+}
+
 /* Mobile screens */
 @media (max-width: 767px) {
   .gallery {
