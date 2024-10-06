@@ -1,0 +1,49 @@
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.imageCard {
+  position: relative;
+  margin: 10px;
+  max-width: 300px;
+}
+
+.imageCard img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.top {
+  top: 0;
+}
+
+.bottom {
+  bottom: 0;
+}
+
+.below {
+  position: static;
+  background-color: #f0f0f0;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .imageCard {
+    width: 100%;
+    max-width: none;
+  }
+}
