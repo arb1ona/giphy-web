@@ -7,6 +7,8 @@ export const GiphyProvider = ({ children }) => {
   const [query, setQuery] = useState("");
   const [overlayText, setOverlayText] = useState("");
   const [textPosition, setTextPosition] = useState("top");
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const value = {
     images,
@@ -17,6 +19,10 @@ export const GiphyProvider = ({ children }) => {
     setOverlayText,
     textPosition,
     setTextPosition,
+    isLoading,
+    setIsLoading,
+    error,
+    setError,
   };
 
   return (
@@ -24,4 +30,11 @@ export const GiphyProvider = ({ children }) => {
   );
 };
 
-export const useGiphyContext = () => useContext(GiphyContext);
+export const useGiphyContext = () => {
+  const context = useContext(GiphyContext);
+
+  if (context === undefined) {
+    throw new Error(`useGiphyContext must be used within a GiphyProvider.js`);
+  }
+  return context;
+};

@@ -26,7 +26,8 @@ const ImageCard = ({ url, overlayText, textPosition }: ImageCardProps) => {
 const IMAGES_PER_PAGE = 3;
 
 const ImageGallery = () => {
-  const { images, overlayText, textPosition } = useGiphyContext();
+  const { images, overlayText, textPosition, isLoading, error } =
+    useGiphyContext();
   const [currentPage, setCurrentPage] = useState(0);
 
   const pageCount = Math.ceil(images.length / IMAGES_PER_PAGE);
@@ -43,6 +44,14 @@ const ImageGallery = () => {
 
   if (images.length === 0) {
     return <div className={styles.noImages}>No images to display</div>;
+  }
+
+  if (isLoading) {
+    return <div className={styles.loading}>Loading...</div>;
+  }
+
+  if (error) {
+    return <div className={styles.error}>{error}</div>;
   }
 
   return (
