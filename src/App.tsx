@@ -1,25 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import SearchForm from "./components/SearchForm";
+import ImageGallery from "./components/ImageGallery";
+import Pagination from "./components/Pagination";
+import { GiphyProvider } from "./contexts/GiphyContext";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GiphyProvider>
+      <div className="App">
+        <h1>Giphy Image Explorer</h1>
+        <SearchForm />
+        <ImageGallery />
+        <Pagination />
+      </div>
+    </GiphyProvider>
   );
 }
 
