@@ -8,7 +8,7 @@ export const searchGiphy = async (query) => {
     params: {
       api_key: API_KEY,
       q: query,
-      limit: 3,
+      limit: 10,
       rating: "g",
     },
   });
