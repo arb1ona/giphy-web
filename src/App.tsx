@@ -12,7 +12,7 @@ function App() {
         <h1>Giphy Image Explorer</h1>
         <SearchForm />
         <ImageGallery />
-        <Pagination />
+        {/* <Pagination /> */}
       </div>
     </GiphyProvider>
   );
